@@ -41,7 +41,9 @@ fn example() {
         #[section("second succeeds")] {
 
             // The parent section fails assert so this never
-            // gets executed. Should result in undefined result.
+            // gets executed.
+            //
+            // Should result in undefined result but doesn't.
             assert!(true);
         }
     }
