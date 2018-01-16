@@ -1,0 +1,20 @@
+[package]
+authors = ["Mikko Rantanen <jubjub@jubjubnest.net>"]
+description = """
+Rust Automated Test Cases in a Crate. A testing framework inspired by the Catch
+C++ framework. Requires nightly rust.
+"""
+keywords = ["testing"]
+license = "Apache-2.0/MIT"
+name = "ratcc"
+readme = "./README.md"
+repository = "https://github.com/fitzgen/state_machine_future"
+version = "0.1.0"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "0.12", features = [ "full", "visit-mut" ] }
+proc-macro2 = { version = "0.2", features = [ "nightly" ] }
+quote = "0.4"
