@@ -26,7 +26,6 @@ fn example() {
     assert_eq!(a, 0);
 
     #[section("first succeeds")] {
-
         let b = 0;
         assert_eq!(a, b);
 
@@ -34,12 +33,10 @@ fn example() {
     }
 
     #[section("first fails")] {
-
         let b = 1;
         assert_eq!(a, b);
 
         #[section("second succeeds")] {
-
             // The parent section fails assert so this never
             // gets executed.
             //
@@ -59,5 +56,4 @@ fn example() {
 //   test example_first_fails_second_succeeds ... FAILED
 //   test example_first_succeeds ... ok
 //   test example_first_succeeds_second_fails ... FAILED
-// 
 ```
