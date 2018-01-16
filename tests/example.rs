@@ -1,24 +1,24 @@
 #![feature(proc_macro)]
-extern crate catch;
-use catch::*;
+extern crate ratcc;
+use ratcc::*;
 
 #[catch_test]
 fn example() {
 
-    let a = 0;
-    assert_eq!( a, 0 );
+    let owned_type = String::from("foo");
+    assert_eq!( owned_type, "foo" );
 
     #[section("first assert succeeds")] {
 
-        let b = 0;
-        assert_eq!( a, b );
+        let moved_here = owned_type;
+        assert_eq!( moved_here, "foo" );
 
         #[section("second assert fails")] { assert!( false ); }
     }
     #[section("first assert fails")] {
 
-        let b = 1;
-        assert_eq!( a, b );
+        let moved_also_here = owned_type;
+        assert_eq!( moved_also_here, "bar" );
 
         #[section("second assert succeeds")] {
 

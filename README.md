@@ -16,8 +16,8 @@ ratcc = "0.1"
 
 ```rust
 #![feature(proc_macro)]
-extern crate catch;
-use catch::*;
+extern crate ratcc;
+use ratcc::*;
 
 #[catch_test]
 fn example() {
