@@ -25,23 +25,23 @@ fn example() {
     let a = 0;
     assert_eq!(a, 0);
 
-    #[section("first assert succeeds")] {
+    #[section("first succeeds")] {
 
         let b = 0;
         assert_eq!(a, b);
 
-        #[section("second assert fails")] { assert!(false); }
+        #[section("second fails")] { assert!(false); }
     }
 
-    #[section("first assert fails")] {
+    #[section("first fails")] {
 
         let b = 1;
         assert_eq!(a, b);
 
-        #[section("second assert succeeds")] {
+        #[section("second succeeds")] {
 
-            // The parent section fails assert so this never gets executed.
-            // Should result in undefined result.
+            // The parent section fails assert so this never
+            // gets executed. Should result in undefined result.
             assert!(true);
         }
     }
@@ -53,9 +53,9 @@ fn example() {
 //
 //   running 5 tests
 //   test example ... ok
-//   test example_first_assert_fails ... FAILED
-//   test example_first_assert_fails_second_assert_succeeds ... FAILED
-//   test example_first_assert_succeeds ... ok
-//   test example_first_assert_succeeds_second_assert_fails ... FAILED
+//   test example_first_fails ... FAILED
+//   test example_first_fails_second_succeeds ... FAILED
+//   test example_first_succeeds ... ok
+//   test example_first_succeeds_second_fails ... FAILED
 // 
 ```
