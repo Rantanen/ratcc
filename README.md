@@ -1,9 +1,18 @@
-# RATCC
+# Ratcc
 ### Rust Automated Test Cases in a Crate
+
+[![Crates.io](https://img.shields.io/crates/v/ratcc.svg)](https://crates.io/crates/ratcc)
 
 A test frameworked for Rust, inspired by the [Catch] C++ test framework.
 
 [Catch]: https://github.com/catchorg/Catch2
+
+## Usage
+
+```toml
+[dev-dependencies]
+ratcc = "0.1"
+```
 
 ```rust
 #![feature(proc_macro)]
